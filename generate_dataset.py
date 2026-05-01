@@ -4,7 +4,7 @@ from pathlib import Path
 
 background_dir = Path("backgrounds")
 letters_dir = Path("arm_alph")
-output_dir = Path("output_images")
+output_dir = Path("new_images_test")
 output_dir.mkdir(exist_ok=True)
 
 backgrounds = list(background_dir.glob("*.*"))
@@ -15,17 +15,17 @@ if not backgrounds:
 if not letters:
     raise ValueError("В папке 'arm_alph' нет файлов")
 
-variants_per_letter = 5
+variants_per_letter = 25
 
 min_fraction = 0.06   # 6–12% высоты фона — размер буквы
-max_fraction = 0.12
+max_fraction = 0.9
 
-min_angle = -45
-max_angle = 45
+min_angle = -180
+max_angle = 180
 
 # настройки «шумов»
-light_leak_prob = 0.35      # вероятность добавить засвет
-white_squares_prob = 0.35   # вероятность добавить белые квадраты
+light_leak_prob = 0.42      # вероятность добавить засвет
+white_squares_prob = 0.42   # вероятность добавить белые квадраты
 
 def add_light_leak(img: Image.Image) -> Image.Image:
     """Простейший light leak: полупрозрачный цветной градиент с края."""

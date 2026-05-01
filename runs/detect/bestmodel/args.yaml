@@ -1,7 +1,7 @@
 task: detect
 mode: train
 model: yolov8n.pt
-data: data.yaml
+data: C:\Users\Кирилл\skat_cv\dataset_(new_images_0)\data.yaml
 epochs: 50
 time: null
 patience: 100

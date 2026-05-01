@@ -4,7 +4,7 @@ model = YOLO("runs/detect/bestmodel/weights/best.pt")
 
 
 metrics = model.val(
-    data="data.yaml",
+    data="C:\\Users\Кирилл\\skat_cv\\dataset_(new_images_0)\\data.yaml",
     split="test"
 )
 
