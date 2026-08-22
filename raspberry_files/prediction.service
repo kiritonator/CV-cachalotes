@@ -1,0 +1,20 @@
+[Unit]
+Description= CV target
+After=multi-user.target
+
+[Service]
+Type=simple
+User=raspberrypiuser
+WorkingDirectory=/home/raspberrypiuser
+
+ExecStart=/home/raspberrypiuser/yolo-venv/bin/python /home/raspberrypiuser/prediction_on_uav.py
+
+TimeoutStopSec=30
+Restart=always
+RestartSec=3
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
